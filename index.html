@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Drengen</title>
+  <link rel="stylesheet" href="./core/ui/styles.css" />
+  <link rel="manifest" href="./manifest.webmanifest">
+</head>
+<body>
+  <div id="app">
+    <div class="overlay" id="overlay"></div>
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Meny">☰</button>
+      <div class="brand">
+        <div class="logo">🌿</div>
+        <div>
+          <div class="brandTitle">Drengen</div>
+          <div class="brandSub" id="brandSub">Core v1.2.1</div>
+        </div>
+      </div>
+
+      <nav class="topnav" id="topnav"></nav>
+      <div class="userchip" id="userchip" title="Aktiv bruker"></div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar" id="sidebar"></aside>
+      <section class="content">
+        <div class="contentHeader">
+          <div>
+            <h1 id="viewTitle">Hjem</h1>
+            <div class="muted" id="viewSub">Oversikt</div>
+          </div>
+          <div class="actions" id="viewActions"></div>
+        </div>
+        <div class="card" id="view"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="bottomnav" id="bottomnav"></div>
+      <span class="muted">Drengen Core v1.5.0 — Mobile cleanup — DB + users + skifter + sau + events</span>
+      <span class="muted" id="footerStatus"></span>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>
